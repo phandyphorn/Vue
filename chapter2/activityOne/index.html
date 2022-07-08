@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="appInput">
+        FirstName: <input v-model="firstName" type="text">
+        LastName: <input v-model="lastName" type="text">
+        Style: <input v-model="style" type="text">
+        <p :style="style" >Hello {{firstName}} {{lastName}} !!</p>
+
+        <input type="text" v-model="message" placeholder="Message">
+
+        <div 
+            class="alert mt-5"
+            :class="[message.length > 5 ? 'alert-danger' : 'alert-success']">
+            If letter are more than 5, it will be red.
+        </div>
+
+    </div>
+</body>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="js/index.js"></script>
+</html>

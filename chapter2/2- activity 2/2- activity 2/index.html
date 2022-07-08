@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Vue</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div id="app" v-cloak>
+      <div class="form">
+        <div>
+          <input v-model="username" type="text" placeholder="Username..." />
+        </div>
+        <div>
+          <input v-model="age" type="number" placeholder="Age..." />
+        </div>
+      </div>
+      <ul>
+        <li>
+          <span class="index" v-if="age > 0" >{{age}}</span>
+          <span class="name"> {{username}} </span>
+        </li>
+        <li>
+          <span class="sorry" if-else >Sorry</span>
+          <span class="message">Age must be greater than 0</span>
+        </li>
+      </ul>
+      <ul>
+        <li v-for="letter in arr">{{letter}}</li>
+      </ul>
+
+      <input v-model="something" type="text">
+      <button @click="add">Add</button>
+      <ul>
+        <li v-for="some in array">{{some}}</li>
+      </ul>
+<!-- :href = v-bind -->
+      <!-- <a :href="link">Google</a> -->
+      <!-- or -->
+      <!-- v-bind use with link -->
+      <a v-bind:href="link">Google</a>
+      <!-- <img :src="image" alt=""> -->
+      <p v-text="text"></p>
+      <input type="text" v-model="text">
+      <p>{{text}}</p>
+      <!-- we can not do like this -->
+      <!-- <a v-bind:href={{objective}}>Google</a> -->
+    </div>
+  </body>
+</html>

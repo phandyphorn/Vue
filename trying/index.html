@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="getUsers()">Display Users</button>
+        <div class="container">
+            <div class="card" v-for="user in users">
+                <img :src  = 'user.avatar' alt="">
+                <h1>{{ user.first_name}} {{ user.last_name }}</h1>
+                <p>Email:{{ user.email }}</p>
+                <p>Country: {{country}}</p>
+            </div>
+            <div class="card">
+                <p>{{ message }}</p>
+                <input type="text" v-model="message">
+                <h1> Count: {{count}} </h1>
+                <button v-on:click="countUp" class="btn btn-primary">Press To Add</button>
+                <button @click="countDown" class="btn btn-primary">Press To Minus</button>
+                <p>
+                    Visit: <a :href="url"> {{cleanUrl}} </a>
+                </p>
+                <input type="text" class="form-controll" v-model="url">
+                <ul>
+                    <li v-for = 'todo in todos'>{{todo.text}}</li>
+                    <li v-for = 'count in counts'>Make more count</li>
+                    <li v-for = 'count in counts'>Item #{{count}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="js/main.js"></script>
+</html>

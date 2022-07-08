@@ -1,0 +1,71 @@
+.container {
+    display: flex;
+    justify-content:center;
+    width: 100%;
+}
+.card {
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    border-top: 5px solid #1b995e;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: family;
+    cursor: pointer;
+    color: #1b995e;
+    
+}
+
+a:hover{
+    color:rgb(255, 81, 0);
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}
+
+table,th,td{
+    border: 1px solid rgba(255, 81, 0);
+    border-collapse: none;
+    
+}
+
+table,th{
+    font-size: 25px;
+}
+
+img {
+    display: block;  
+    margin-left: auto;  
+    margin-right: auto;  
+    border: 8px ridge #1b995e;  
+    padding: 5px;  
+    width:50%;
+    height:70%;
+}
+
+.input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+input {
+    padding: 7px;
+    margin: 5px;
+    
+}
+.title {
+    width:25%;
+}
+
+.query {
+    width:75%;
+}

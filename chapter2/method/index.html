@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Method</title>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <button @click="toggle" class="btn btn-primary">Toggle</button>
+        <button @click="add" class="btn btn-dark">Add</button>
+        <button @click="reduce" class="btn btn-danger">Reduce</button>
+
+        <!-- Work if true -->
+        <div class="box" v-if="isShow">1</div>
+        <div class="box" v-else-if="isShow">2</div>
+        <div class="box" v-else>3</div>
+
+        <div class="box" v-if="score == 100">A</div>
+        <div class="box" v-if="score == 90">B</div>
+        <div class="box" v-if="score == 80">C</div>
+        <div class="box" v-if="score == 70">D</div>
+        <div class="box" v-if="score == 60">E</div>
+        <div class="box" v-if="score == 49">F</div>
+
+
+        <p>{{getMessage()}}</p>
+        <p>{{number}}</p>
+        <!-- Get value from input -->
+        <input v-model="name" type="text">
+        <button @click="setName">Reset input</button>
+        <p>{{name}}</p>
+        <input v-model="text" type="text">
+        <button @click="showOnConsole">Show message on console</button>
+
+        <input v-model="goal" type="text">
+        <button @click="addGoal">Add Goal</button>
+        <p v-if="goal >= 0 ">{{goal}}</p>
+        <p v-else>{{noInput}}</p>
+
+
+    </div>
+</body>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    isShow: false,
+                    isShow3: true,
+                    number: 0,
+                    name: "",
+                    text: "",
+                    score: null,
+                    goal: null,
+                    noInput: "No  goals have been added yet - please start adding some!"
+                }
+            },
+            methods: {
+                toggle(){
+                    this.isShow = !this.isShow;
+                },
+                getMessage() {
+                    console.log("Hello bart")
+                },
+                add() {
+                    this.number +=1;
+                },
+                reduce() {
+                    this.number -=1;
+                },
+                setName() {
+                    this.name = "";
+                },
+                showOnConsole() {
+                    console.log(this.text);
+                },
+                addGoal() {
+                    this.goal = addGoal();
+                }
+            }
+        });
+        // where it will execute
+        app.mount("#app")
+    </script>
+</html>
